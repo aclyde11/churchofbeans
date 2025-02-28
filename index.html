@@ -5,124 +5,300 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Church of the Bean</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts with expanded selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Gloock&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <style>
-    /* Background with parchment texture */
+    /* Background with enhanced parchment texture */
     body {
       margin: 0;
-      padding: 2rem;
-      background: url('https://www.transparenttextures.com/patterns/aged-paper.png'), linear-gradient(135deg, #f8f1e0, #f3e6d4);
-      font-family: 'Gloock', serif;
-      color: #3f2a14;
+      padding: 0;
+      background: url('https://www.transparenttextures.com/patterns/aged-paper.png'), 
+                  radial-gradient(circle, #f8f1e0, #e6d2b5);
+      font-family: 'Playfair Display', serif;
+      color: #3a2410;
+      overflow-x: hidden;
     }
 
-    /* Main Container */
+    /* Scrollbar styling for desktop */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f3e6d4;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #8b5a2b;
+      border: 3px solid #f3e6d4;
+      border-radius: 10px;
+    }
+
+    /* Main Container with responsive padding */
     .container {
+      width: 92%;
       max-width: 800px;
-      margin: 0 auto;
-      padding: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.92);
+      margin: 20px auto;
+      padding: 3rem 2rem;
+      background-color: rgba(255, 252, 245, 0.95);
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      border: 2px solid #d4af37;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.22), 0 0 0 6px rgba(212, 175, 55, 0.3);
+      border: 5px double #d4af37;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Grandiose Title */
+    /* Decorative corner elements */
+    .container::before,
+    .container::after {
+      content: "✥";
+      font-size: 3rem;
+      color: rgba(139, 90, 43, 0.2);
+      position: absolute;
+      z-index: 0;
+    }
+    
+    .container::before {
+      top: 10px;
+      left: 10px;
+      transform: rotate(-45deg);
+    }
+    
+    .container::after {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(135deg);
+    }
+
+    /* Background pattern for container */
+    .container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.06) 10%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 90, 43, 0.06) 10%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(139, 90, 43, 0.03) 30%, transparent 40%);
+      z-index: -1;
+    }
+
+    /* Grandiose Title with responsive sizing */
     h1 {
       font-family: 'Cinzel Decorative', cursive;
-      font-size: 2.5rem;
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
       text-align: center;
       text-transform: uppercase;
-      color: #8b5a2b;
-      text-shadow: 2px 2px 4px rgba(139, 90, 43, 0.3);
       letter-spacing: 2px;
-      background: linear-gradient(to right, #d4af37, #8b5a2b);
+      background: linear-gradient(45deg, #d4af37, #8b5a2b, #d4af37);
+      background-size: 200% auto;
+      animation: shimmer 5s infinite linear;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 2.5rem;
+      margin: 0 0 2.5rem 0;
+      padding: 1rem 0;
       position: relative;
+      font-weight: 900;
+      line-height: 1.3;
+      border-top: 3px double rgba(139, 90, 43, 0.4);
+      border-bottom: 3px double rgba(139, 90, 43, 0.4);
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
     }
 
     /* Decorative Flourishes */
     h1::before, h1::after {
       content: "✥";
-      font-size: 1.2rem;
+      font-size: clamp(0.8rem, 4vw, 1.2rem);
       color: #8b5a2b;
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 clamp(5px, 2vw, 10px);
+      vertical-align: middle;
+      animation: rotate 8s infinite linear;
     }
 
-    /* Text Styling */
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Text Styling with responsive sizing */
     p {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.6rem;
       text-align: justify;
-      line-height: 1.6;
-      font-size: 1.1rem;
+      line-height: 1.8;
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
     }
 
-    /* Drop Cap for First Paragraph */
+    /* Drop Cap for First Paragraph - larger on mobile for impact */
     p:first-of-type::first-letter {
-      font-size: 3rem;
+      font-size: clamp(3rem, 8vw, 3.5rem);
       font-weight: bold;
       float: left;
-      margin-right: 8px;
-      line-height: 1;
+      margin-right: 10px;
+      line-height: 0.8;
       color: #8b5a2b;
       font-family: 'Cinzel Decorative', cursive;
+      text-shadow: 2px 2px 4px rgba(139, 90, 43, 0.3);
+      padding: 5px;
+      background: radial-gradient(circle, rgba(255,255,255,0.7) 30%, transparent 70%);
     }
 
-    /* Latin Emphasis */
+    /* Latin Emphasis with enhanced styling */
     p em {
       font-style: italic;
       color: #8b5a2b;
+      font-weight: 600;
+      text-shadow: 1px 1px 1px rgba(139, 90, 43, 0.2);
+      padding: 0 3px;
     }
 
-    /* Highlight Key Phrases */
+    /* Highlight Key Phrases with pulsing effect */
     strong {
       color: #b22222;
-      font-size: 1.2rem;
-      text-shadow: 1px 1px 2px rgba(178, 34, 34, 0.2);
+      font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+      text-shadow: 2px 2px 3px rgba(178, 34, 34, 0.3);
+      font-weight: 700;
+      display: inline-block;
+      padding: 0 5px;
+      background: rgba(178, 34, 34, 0.05);
+      border-radius: 3px;
+      animation: pulse 2s infinite;
     }
 
-    /* Signature Enhancements */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Signature Enhancements with responsive sizing */
     .signature {
-      margin-top: 2rem;
+      margin-top: 3rem;
       text-align: right;
       font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
+      font-size: clamp(1.3rem, 5vw, 1.5rem);
       color: #8b5a2b;
-      text-shadow: 1px 1px 2px rgba(139, 90, 43, 0.3);
+      text-shadow: 2px 2px 3px rgba(139, 90, 43, 0.3);
       position: relative;
+      padding-right: 10px;
+      font-weight: 700;
     }
 
     /* Decorative Line Under Signature */
     .signature::after {
       content: "";
       display: block;
-      width: 150px;
-      height: 2px;
-      background: #8b5a2b;
-      margin: 8px auto 0;
+      width: clamp(100px, 40%, 150px);
+      height: 3px;
+      background: linear-gradient(to right, transparent, #8b5a2b, transparent);
+      margin: 8px 0 0 auto;
+    }
+
+    /* Golden divider between paragraphs */
+    .divider {
+      width: 70%;
+      height: 5px;
+      margin: 2rem auto;
+      background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.5), transparent);
+      position: relative;
+    }
+
+    .divider::before, .divider::after {
+      content: "❦";
+      color: rgba(139, 90, 43, 0.5);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+    }
+
+    .divider::before {
+      left: 15%;
+    }
+
+    .divider::after {
+      right: 15%;
+    }
+
+    /* Decorative border frame */
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 20px solid transparent;
+      border-image: linear-gradient(45deg, rgba(212, 175, 55, 0.3), rgba(139, 90, 43, 0.3), rgba(212, 175, 55, 0.3)) 1;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.2rem;
+        margin: 15px auto;
+        width: 85%;
+      }
+      
+      h1 {
+        padding: 0.8rem 0;
+        margin-bottom: 1.8rem;
+      }
+      
+      p {
+        text-align: left;
+      }
+      
+      .divider {
+        margin: 1.5rem auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1rem;
+        border-width: 4px;
+      }
+      
+      .signature {
+        margin-top: 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="frame"></div>
     <h1>TO THE ESTEEMED CONGREGANTS IN THE CHURCH OF THE BEAN,</h1>
 
     <p>Despite the recent <em>New Yorker</em> article and the ever-mounting slings and arrows of this mortal coil, let it be known that vegans—like all creatures who walk, crawl, or otherwise locomote upon this weary earth—hail from all stations in life: bankers, financiers, Olympic judo champions. We, the humble evangelists of the bean, are no more estranged from the grand pageant of humanity than the lentil is from the pulse, than the chickpea is from the falafel, than the soybean is from the inscrutable mysteries of tempeh. And though some among us may be wedded to the carnivorous predilection, <em>omnes homines sumus.</em> Corporeality strikes a bean to dryness, myself to mucosus, and our friends in the coal mine—to black lung.</p>
+
+    <div class="divider"></div>
 
     <p>And so, it is with a sorrow that surpasses even the tragedy of an over-soaked chickpea, with a lamentation deeper than the cavernous abyss of a split pea sundered from its other half, that I must bear grim tidings:</p>
 
     <p><strong>the eucharistic seed shall not be sown this weekend.</strong></p>
 
+    <div class="divider"></div>
+
     <p>The fertile plot of our gathering, once poised to bring forth a bountiful harvest of mirth, must now lie fallow, abandoned to the ravages of misfortune. What cruel harvester has reaped our revelry before its time? What unseen weevil has burrowed into the granary of our plans? Oh, bitter harvest! A feast turned famine by the indifferent scythe of fate!</p>
 
     <p>Though I longed to break bread (be it leavened or, in the ascetic purity of our calling, a gluten-free legume-based alternative) and raise a goblet of something fermented but ethically sound, I find myself instead cast adrift upon a sea most mucosal, my body wracked with affliction, my faculties dulled, my humors so unbalanced as to bring medieval physicians to their trembling knees.</p>
+
+    <div class="divider"></div>
 
     <p>But let us not despair, nor consign ourselves to the dust from which the lentil sprang! For though this season has failed us, the wheel of time turns, and another shall rise in its place. The soil of camaraderie remains rich, its loam dark with the promise of future feasting. This is not the end—this is but a dormancy, a necessary winter before the spring of our next gathering, when laughter shall once more burst forth like a vine of heirloom legumes, when the air shall be thick with the fragrance of promise, and when the eucharistic seed, at last, shall find purchase in the sacred furrows of friendship.</p>
 
