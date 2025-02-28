@@ -381,6 +381,14 @@
       opacity: 0.8;
     }
 
+    /* Status indicator for debugging */
+    .audio-status {
+      font-size: 0.8rem;
+      color: #8b5a2b;
+      margin-top: 5px;
+      opacity: 0.7;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .container {
@@ -441,6 +449,7 @@
         <div class="audio-bar"></div>
       </div>
       <span class="audio-label" id="audioLabel">Click to hear the divine proclamation</span>
+      <div class="audio-status" id="audioStatus"></div>
     </div>
     
     <h1>TO THE ESTEEMED CONGREGANTS IN THE CHURCH OF THE BEAN,</h1>
@@ -471,8 +480,8 @@
     </div>
   </div>
 
-  <!-- Add your actual audio file here -->
-  <audio id="sermondAudio" style="display: none;">
+  <!-- Audio element -->
+  <audio id="sermonAudio" preload="auto">
     <source src="reading_20250228.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -482,24 +491,58 @@
     document.addEventListener('DOMContentLoaded', function() {
       const audioButton = document.getElementById('audioButton');
       const audioContainer = document.getElementById('audioContainer');
-      const audioElement = document.getElementById('sermondAudio');
+      const audioElement = document.getElementById('sermonAudio');
       const audioLabel = document.getElementById('audioLabel');
+      const audioStatus = document.getElementById('audioStatus');
       
       let isPlaying = false;
       
+      // Debug function to show audio status
+      function updateStatus(message) {
+        if (audioStatus) {
+          audioStatus.textContent = message;
+        }
+      }
+      
+      // Check if audio loaded
+      if (audioElement) {
+        audioElement.addEventListener('loadeddata', function() {
+          updateStatus("Audio loaded successfully");
+        });
+        
+        audioElement.addEventListener('error', function(e) {
+          updateStatus("Error loading audio: " + (audioElement.error ? audioElement.error.code : "unknown"));
+        });
+      } else {
+        updateStatus("Audio element not found!");
+      }
+      
       audioButton.addEventListener('click', function() {
         if (!isPlaying) {
-          audioElement.play();
-          isPlaying = true;
-          audioContainer.classList.add('playing');
-          audioLabel.textContent = "Experiencing the sacred words...";
-          audioButton.innerHTML = "<span>Pause The Sacred Reading</span><div class='audio-glow'></div>";
+          // Try to play and handle any errors
+          const playPromise = audioElement.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.then(_ => {
+              // Playback started successfully
+              isPlaying = true;
+              audioContainer.classList.add('playing');
+              audioLabel.textContent = "Experiencing the sacred words...";
+              audioButton.innerHTML = "<span>Pause The Sacred Reading</span><div class='audio-glow'></div>";
+              updateStatus("Playing");
+            })
+            .catch(error => {
+              // Auto-play was prevented or other error
+              updateStatus("Play failed: " + error.message);
+            });
+          }
         } else {
           audioElement.pause();
           isPlaying = false;
           audioContainer.classList.remove('playing');
           audioLabel.textContent = "Click to hear the divine proclamation";
           audioButton.innerHTML = "<span>Hear The Sacred Reading</span><div class='audio-glow'></div>";
+          updateStatus("Paused");
         }
       });
       
@@ -508,6 +551,7 @@
         audioContainer.classList.remove('playing');
         audioLabel.textContent = "The sermon has concluded. Listen again?";
         audioButton.innerHTML = "<span>Hear The Sacred Reading Again</span><div class='audio-glow'></div>";
+        updateStatus("Ended");
       });
     });
   </script>
