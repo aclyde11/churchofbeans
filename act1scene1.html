@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Opera - Scene 1, Act 1">
-  <meta property="og:description" content="The beginning of our journey into the mystical world of the opera. Experience the first act of the first scene.">
-  <meta property="og:image" content="opera_logo.jpeg">
-  <meta property="og:url" content="https://myopera.org/scene1act1">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Church of the Bean">
+  <meta property="og:description" content="A sacred space for bean lovers and vegans, where even legumes are holy. Join us for a divine reading and hear the proclamation.">
+  <meta property="og:image" content="churchofbeans_logo.jpeg">
+  <meta property="og:url" content="https://churchofbeans.org">
+  <meta property="og:typexx" content="website">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <title>Opera - Scene 1, Act 1</title>
+  <title>Church of the Bean</title>
   
   <!-- Google Fonts with expanded selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
     /* Decorative corner elements */
     .container::before,
     .container::after {
-      content: "♪";
+      content: "✥";
       font-size: 3rem;
       color: rgba(139, 90, 43, 0.2);
       position: absolute;
@@ -124,7 +124,7 @@
 
     /* Decorative Flourishes */
     h1::before, h1::after {
-      content: "♫";
+      content: "✥";
       font-size: clamp(0.8rem, 4vw, 1.2rem);
       color: #8b5a2b;
       display: inline-block;
@@ -224,7 +224,7 @@
     }
 
     .divider::before, .divider::after {
-      content: "♪";
+      content: "❦";
       color: rgba(139, 90, 43, 0.5);
       position: absolute;
       top: 50%;
@@ -397,97 +397,6 @@
       opacity: 0.7;
     }
 
-    /* Navigation buttons */
-    .nav-buttons {
-      display: flex;
-      justify-content: space-between;
-      margin: 2rem 0;
-      position: relative;
-      z-index: 10;
-      gap: 20px;
-    }
-
-    .nav-button {
-      display: inline-block;
-      padding: 12px 25px;
-      background: linear-gradient(45deg, #8b5a2b, #d4af37);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: clamp(0.8rem, 3vw, 1rem);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
-      transition: all 0.3s ease;
-      text-align: center;
-      min-width: 120px;
-    }
-
-    .nav-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(139, 90, 43, 0.4);
-    }
-
-    .nav-button:active {
-      transform: translateY(1px);
-    }
-
-    /* Cast list and stage directions */
-    .cast-list {
-      background: rgba(255, 252, 245, 0.8);
-      border: 1px solid #d4af37;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      box-shadow: 0 4px 8px rgba(139, 90, 43, 0.2);
-    }
-
-    .cast-list h2 {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: clamp(1.2rem, 4vw, 1.5rem);
-      text-align: center;
-      margin-top: 0;
-      color: #8b5a2b;
-      border-bottom: 2px solid rgba(139, 90, 43, 0.2);
-      padding-bottom: 10px;
-    }
-
-    .cast-item {
-      margin-bottom: 15px;
-    }
-
-    .character-name {
-      font-weight: 700;
-      color: #8b5a2b;
-    }
-
-    .stage-directions {
-      font-style: italic;
-      background: rgba(139, 90, 43, 0.05);
-      border-left: 3px solid #8b5a2b;
-      padding: 10px 15px;
-      margin: 1.5rem 0;
-      color: #5a4022;
-    }
-
-    .dialogue {
-      margin-bottom: 2rem;
-    }
-
-    .dialogue .speaker {
-      font-weight: 700;
-      color: #8b5a2b;
-      margin-bottom: 5px;
-      font-size: clamp(1.1rem, 3vw, 1.2rem);
-    }
-
-    .dialogue .text {
-      margin-left: 20px;
-      line-height: 1.7;
-    }
-
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .container {
@@ -512,16 +421,6 @@
       .audio-button {
         padding: 12px 25px;
       }
-
-      .nav-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .nav-button {
-        width: 80%;
-        margin-bottom: 10px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -544,16 +443,10 @@
   <div class="container">
     <div class="frame"></div>
     
-    <!-- Navigation buttons -->
-    <div class="nav-buttons">
-      <a href="index.html" class="nav-button">← Home</a>
-      <a href="scene1act2.html" class="nav-button">Next: Act 2 →</a>
-    </div>
-    
     <!-- Audio player -->
     <div class="audio-container" id="audioContainer">
       <button class="audio-button" id="audioButton">
-        <span>Play Act 1 Music</span>
+        <span>Hear The Sacred Reading</span>
         <div class="audio-glow"></div>
       </button>
       <div class="audio-viz">
@@ -563,158 +456,39 @@
         <div class="audio-bar"></div>
         <div class="audio-bar"></div>
       </div>
-      <span class="audio-label" id="audioLabel">Experience the musical introduction</span>
+      <span class="audio-label" id="audioLabel">Click to hear the divine proclamation</span>
       <div class="audio-status" id="audioStatus"></div>
     </div>
     
-    <h1>Scene 1, Act 1: The Awakening</h1>
-    
-    <!-- Cast list for this scene -->
-    <div class="cast-list">
-      <h2>Cast of Characters</h2>
-      <div class="cast-item"><span class="character-name">Soprano - Elisabetta:</span> The protagonist, seeking truth</div>
-      <div class="cast-item"><span class="character-name">Tenor - Marco:</span> The mysterious guide</div>
-      <div class="cast-item"><span class="character-name">Chorus:</span> Voices of nature and memory</div>
-    </div>
+    <h1>TO THE ESTEEMED CONGREGANTS IN THE CHURCH OF THE BEAN,</h1>
 
-    <!-- Stage directions -->
-    <div class="stage-directions">
-      <p>The stage is dimly lit. A single spotlight illuminates the center where ELISABETTA stands, dressed in flowing white robes. The CHORUS is positioned in shadows around the edges of the stage. Gentle orchestral music builds, suggesting the coming dawn.</p>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">ELISABETTA:</div>
-      <div class="text">
-        <p>Within this darkness, I await the light,<br>
-        My soul adrift on waves of memory.<br>
-        What visions dance beyond my mortal sight?<br>
-        What whispers call from realms I cannot see?</p>
-      </div>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">CHORUS:</div>
-      <div class="text">
-        <p><em>(softly)</em><br>
-        Awaken, seeker, from your slumber deep,<br>
-        The veil grows thin between the worlds tonight.<br>
-        What secrets do you wish the stars to keep?<br>
-        What shadows do you banish with your light?</p>
-      </div>
-    </div>
-
-    <div class="stage-directions">
-      <p>A second spotlight gradually illuminates MARCO, who enters from stage right. He moves with deliberate steps, carrying a lantern that casts flickering patterns across the stage.</p>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">MARCO:</div>
-      <div class="text">
-        <p>I come bearing flames of ancient knowing,<br>
-        To guide your steps through darkness unexplored.<br>
-        Like rivers to the sea, forever flowing,<br>
-        Our paths converge by destinies assured.</p>
-      </div>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">ELISABETTA:</div>
-      <div class="text">
-        <p><strong>Who sends you to my side at this strange hour?<br>
-        What purpose draws you to my questioning?</strong></p>
-      </div>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">MARCO:</div>
-      <div class="text">
-        <p>Not who, but what—the ever-turning wheel,<br>
-        The dance of stars, the rhythm of the spheres.<br>
-        <em>Tempus fugit, memento vivere</em>—<br>
-        Time flies, remember to live, while moments disappear.</p>
-      </div>
-    </div>
-
-    <div class="stage-directions">
-      <p>The lights slowly brighten, suggesting dawn. The CHORUS moves forward, forming a semicircle around ELISABETTA and MARCO. The music swells with strings and woodwinds.</p>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">CHORUS:</div>
-      <div class="text">
-        <p>The awakening begins, the journey starts,<br>
-        As morning light dispels the shadowed night.<br>
-        Two souls entwined by fate's mysterious arts,<br>
-        Must seek the truth beyond what meets the sight.</p>
-      </div>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">ELISABETTA:</div>
-      <div class="text">
-        <p>Then I shall follow where your lantern leads,<br>
-        Through darkened paths and gardens unexplored.<br>
-        Though caution whispers, courage intercedes—<br>
-        What treasures wait beyond this threshold door?</p>
-      </div>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">MARCO:</div>
-      <div class="text">
-        <p>Not treasures as the world has come to know,<br>
-        But wisdom ancient as the mountain stone.<br>
-        The seeds of truth we carefully must sow,<br>
-        To reap the harvest from what has been grown.</p>
-      </div>
-    </div>
-
-    <div class="stage-directions">
-      <p>MARCO extends his hand to ELISABETTA. After a moment's hesitation, she takes it. The lights shift to a warm golden hue as they move together toward stage left. The CHORUS follows behind them as the music builds to a crescendo.</p>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">ELISABETTA and MARCO:</div>
-      <div class="text">
-        <p><em>(in unison)</em><br>
-        Through shadow and light, through wisdom and wonder,<br>
-        We journey together, no pathway asunder.<br>
-        The quest has begun, the story unfolds,<br>
-        As destiny's tapestry gently unrolls.</p>
-      </div>
-    </div>
-
-    <div class="stage-directions">
-      <p>The lights slowly fade except for the lantern MARCO carries. As they exit stage left, the CHORUS remains, their voices diminishing to whispers.</p>
-    </div>
-
-    <div class="dialogue">
-      <div class="speaker">CHORUS:</div>
-      <div class="text">
-        <p><em>(voices fading)</em><br>
-        The first step is taken, the journey's begun,<br>
-        What ends in the evening must start with the sun.<br>
-        Follow the lantern, seek what is true,<br>
-        The answers you seek are already in you.</p>
-      </div>
-    </div>
-
-    <div class="stage-directions">
-      <p>The stage darkens completely. A single note lingers in the air as the curtain falls on Act 1.</p>
-    </div>
+    <p>Despite the recent <em>New Yorker</em> article and the ever-mounting slings and arrows of this mortal coil, let it be known that vegans—like all creatures who walk, crawl, or otherwise locomote upon this weary earth—hail from all stations in life: bankers, financiers, Olympic judo champions. We, the humble evangelists of the bean, are no more estranged from the grand pageant of humanity than the lentil is from the pulse, than the chickpea is from the falafel, than the soybean is from the inscrutable mysteries of tempeh. And though some among us may be wedded to the carnivorous predilection, <em>omnes homines sumus.</em> Corporeality strikes a bean to dryness, myself to mucosus, and our friends in the coal mine—to black lung.</p>
 
     <div class="divider"></div>
 
-    <!-- Navigation buttons at bottom -->
-    <div class="nav-buttons">
-      <a href="index.html" class="nav-button">← Home</a>
-      <a href="scene1act2.html" class="nav-button">Next: Act 2 →</a>
-    </div>
+    <p>And so, it is with a sorrow that surpasses even the tragedy of an over-soaked chickpea, with a lamentation deeper than the cavernous abyss of a split pea sundered from its other half, that I must bear grim tidings:</p>
+
+    <p><strong>the eucharistic seed shall not be sown this weekend.</strong></p>
+
+    <div class="divider"></div>
+
+    <p>The fertile plot of our gathering, once poised to bring forth a bountiful harvest of mirth, must now lie fallow, abandoned to the ravages of misfortune. What cruel harvester has reaped our revelry before its time? What unseen weevil has burrowed into the granary of our plans? Oh, bitter harvest! A feast turned famine by the indifferent scythe of fate!</p>
+
+    <p>Though I longed to break bread (be it leavened or, in the ascetic purity of our calling, a gluten-free legume-based alternative) and raise a goblet of something fermented but ethically sound, I find myself instead cast adrift upon a sea most mucosal, my body wracked with affliction, my faculties dulled, my humors so unbalanced as to bring medieval physicians to their trembling knees.</p>
+
+    <div class="divider"></div>
+
+    <p>But let us not despair, nor consign ourselves to the dust from which the lentil sprang! For though this season has failed us, the wheel of time turns, and another shall rise in its place. The soil of camaraderie remains rich, its loam dark with the promise of future feasting. This is not the end—this is but a dormancy, a necessary winter before the spring of our next gathering, when laughter shall once more burst forth like a vine of heirloom legumes, when the air shall be thick with the fragrance of promise, and when the eucharistic seed, at last, shall find purchase in the sacred furrows of friendship.</p>
+
+    <p>Until then, may your legumes be tender, your pulses plump, your humors in celestial equilibrium, and your lungs—above all—unsullied by soot or sickness, as clear and vast as the clarion sky.</p>
+
+    <a href="index.html" class="btn">← Return to home</a>
+    <a href="act1scene2.html" class="btn">Proceed to Scene 2 →</a>
   </div>
 
   <!-- Audio element -->
   <audio id="sermonAudio" preload="auto">
-    <source src="scene1act1.mp3" type="audio/mpeg">
+    <source src="bean_opera.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
@@ -759,8 +533,8 @@
               // Playback started successfully
               isPlaying = true;
               audioContainer.classList.add('playing');
-              audioLabel.textContent = "Experiencing the musical journey...";
-              audioButton.innerHTML = "<span>Pause Music</span><div class='audio-glow'></div>";
+              audioLabel.textContent = "Experiencing the sacred words...";
+              audioButton.innerHTML = "<span>Pause The Sacred Reading</span><div class='audio-glow'></div>";
               updateStatus("Playing");
             })
             .catch(error => {
@@ -772,8 +546,8 @@
           audioElement.pause();
           isPlaying = false;
           audioContainer.classList.remove('playing');
-          audioLabel.textContent = "Experience the musical introduction";
-          audioButton.innerHTML = "<span>Play Act 1 Music</span><div class='audio-glow'></div>";
+          audioLabel.textContent = "Click to hear the divine proclamation";
+          audioButton.innerHTML = "<span>Hear The Sacred Reading</span><div class='audio-glow'></div>";
           updateStatus("Paused");
         }
       });
@@ -781,8 +555,8 @@
       audioElement.addEventListener('ended', function() {
         isPlaying = false;
         audioContainer.classList.remove('playing');
-        audioLabel.textContent = "The music has concluded. Listen again?";
-        audioButton.innerHTML = "<span>Replay Act 1 Music</span><div class='audio-glow'></div>";
+        audioLabel.textContent = "The sermon has concluded. Listen again?";
+        audioButton.innerHTML = "<span>Hear The Sacred Reading Again</span><div class='audio-glow'></div>";
         updateStatus("Ended");
       });
     });
