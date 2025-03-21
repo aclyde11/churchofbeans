@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Opera - Scene 1, Act 1">
+  <meta property="og:description" content="The beginning of our journey into the mystical world of the opera. Experience the first act of the first scene.">
+  <meta property="og:image" content="opera_logo.jpeg">
+  <meta property="og:url" content="https://myopera.org/scene1act1">
+  <meta property="og:type" content="website">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <title>Opera - Scene 1, Act 1</title>
+  
+  <!-- Google Fonts with expanded selection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Gloock&family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Background with enhanced parchment texture */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://www.transparenttextures.com/patterns/aged-paper.png'), 
+                  radial-gradient(circle, #f8f1e0, #e6d2b5);
+      font-family: 'Playfair Display', serif;
+      color: #3a2410;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar styling for desktop */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f3e6d4;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #8b5a2b;
+      border: 3px solid #f3e6d4;
+      border-radius: 10px;
+    }
+
+    /* Main Container with responsive padding */
+    .container {
+      width: 92%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 3rem 2rem;
+      background-color: rgba(255, 252, 245, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.22), 0 0 0 6px rgba(212, 175, 55, 0.3);
+      border: 5px double #d4af37;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative corner elements */
+    .container::before,
+    .container::after {
+      content: "♪";
+      font-size: 3rem;
+      color: rgba(139, 90, 43, 0.2);
+      position: absolute;
+      z-index: 0;
+    }
+    
+    .container::before {
+      top: 10px;
+      left: 10px;
+      transform: rotate(-45deg);
+    }
+    
+    .container::after {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(135deg);
+    }
+
+    /* Background pattern for container */
+    .container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.06) 10%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 90, 43, 0.06) 10%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(139, 90, 43, 0.03) 30%, transparent 40%);
+      z-index: -1;
+    }
+
+    /* Grandiose Title with responsive sizing */
+    h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.6rem, 5vw, 2.5rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(45deg, #d4af37, #8b5a2b, #d4af37);
+      background-size: 200% auto;
+      animation: shimmer 5s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 0 2.5rem 0;
+      padding: 1rem 0;
+      position: relative;
+      font-weight: 900;
+      line-height: 1.3;
+      border-top: 3px double rgba(139, 90, 43, 0.4);
+      border-bottom: 3px double rgba(139, 90, 43, 0.4);
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Decorative Flourishes */
+    h1::before, h1::after {
+      content: "♫";
+      font-size: clamp(0.8rem, 4vw, 1.2rem);
+      color: #8b5a2b;
+      display: inline-block;
+      margin: 0 clamp(5px, 2vw, 10px);
+      vertical-align: middle;
+      animation: rotate 8s infinite linear;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Text Styling with responsive sizing */
+    p {
+      margin-bottom: 1.6rem;
+      text-align: justify;
+      line-height: 1.8;
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Drop Cap for First Paragraph - larger on mobile for impact */
+    p:first-of-type::first-letter {
+      font-size: clamp(3rem, 8vw, 3.5rem);
+      font-weight: bold;
+      float: left;
+      margin-right: 10px;
+      line-height: 0.8;
+      color: #8b5a2b;
+      font-family: 'Cinzel Decorative', cursive;
+      text-shadow: 2px 2px 4px rgba(139, 90, 43, 0.3);
+      padding: 5px;
+      background: radial-gradient(circle, rgba(255,255,255,0.7) 30%, transparent 70%);
+    }
+
+    /* Latin Emphasis with enhanced styling */
+    p em {
+      font-style: italic;
+      color: #8b5a2b;
+      font-weight: 600;
+      text-shadow: 1px 1px 1px rgba(139, 90, 43, 0.2);
+      padding: 0 3px;
+    }
+
+    /* Highlight Key Phrases with pulsing effect */
+    strong {
+      color: #b22222;
+      font-size: clamp(1.1rem, 3.5vw, 1.2rem);
+      text-shadow: 2px 2px 3px rgba(178, 34, 34, 0.3);
+      font-weight: 700;
+      display: inline-block;
+      padding: 0 5px;
+      background: rgba(178, 34, 34, 0.05);
+      border-radius: 3px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Signature Enhancements with responsive sizing */
+    .signature {
+      margin-top: 3rem;
+      text-align: right;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.3rem, 5vw, 1.5rem);
+      color: #8b5a2b;
+      text-shadow: 2px 2px 3px rgba(139, 90, 43, 0.3);
+      position: relative;
+      padding-right: 10px;
+      font-weight: 700;
+    }
+
+    /* Decorative Line Under Signature */
+    .signature::after {
+      content: "";
+      display: block;
+      width: clamp(100px, 40%, 150px);
+      height: 3px;
+      background: linear-gradient(to right, transparent, #8b5a2b, transparent);
+      margin: 8px 0 0 auto;
+    }
+
+    /* Golden divider between paragraphs */
+    .divider {
+      width: 70%;
+      height: 5px;
+      margin: 2rem auto;
+      background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.5), transparent);
+      position: relative;
+    }
+
+    .divider::before, .divider::after {
+      content: "♪";
+      color: rgba(139, 90, 43, 0.5);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+    }
+
+    .divider::before {
+      left: 15%;
+    }
+
+    .divider::after {
+      right: 15%;
+    }
+
+    /* Decorative border frame */
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 20px solid transparent;
+      border-image: linear-gradient(45deg, rgba(212, 175, 55, 0.3), rgba(139, 90, 43, 0.3), rgba(212, 175, 55, 0.3)) 1;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* AUDIO PLAYER STYLING */
+    .audio-container {
+      position: relative;
+      margin: 2.5rem auto;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .audio-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #d4af37, #8b5a2b);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1rem, 4vw, 1.3rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(139, 90, 43, 0.4), 
+                  0 0 0 5px rgba(212, 175, 55, 0.2),
+                  inset 0 0 10px rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .audio-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(139, 90, 43, 0.5), 
+                 0 0 0 5px rgba(212, 175, 55, 0.3),
+                 inset 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .audio-button:active {
+      transform: translateY(1px);
+    }
+
+    .audio-button::before, .audio-button::after {
+      content: "♫";
+      position: absolute;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      animation: float 3s infinite alternate ease-in-out;
+    }
+
+    .audio-button::before {
+      left: 12px;
+      animation-delay: 0s;
+    }
+
+    .audio-button::after {
+      right: 12px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-5px) rotate(10deg); }
+    }
+
+    .audio-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      border-radius: 50px;
+    }
+
+    .audio-button:hover .audio-glow {
+      opacity: 1;
+    }
+
+    .playing .audio-button {
+      background: linear-gradient(45deg, #8b5a2b, #b22222);
+      animation: pulse-button 2s infinite;
+    }
+
+    @keyframes pulse-button {
+      0% { box-shadow: 0 0 0 0 rgba(178, 34, 34, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(178, 34, 34, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(178, 34, 34, 0); }
+    }
+
+    /* Audio visualization bars */
+    .audio-viz {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      height: 30px;
+      margin-top: 10px;
+    }
+
+    .playing .audio-viz {
+      display: flex;
+    }
+
+    .audio-bar {
+      width: 5px;
+      height: 100%;
+      background-color: #8b5a2b;
+      border-radius: 3px;
+    }
+
+    .audio-bar:nth-child(1) { animation: bar-dance 1.2s ease-in-out 0.0s infinite alternate; }
+    .audio-bar:nth-child(2) { animation: bar-dance 0.9s ease-in-out 0.1s infinite alternate; }
+    .audio-bar:nth-child(3) { animation: bar-dance 1.0s ease-in-out 0.2s infinite alternate; }
+    .audio-bar:nth-child(4) { animation: bar-dance 1.3s ease-in-out 0.3s infinite alternate; }
+    .audio-bar:nth-child(5) { animation: bar-dance 0.8s ease-in-out 0.4s infinite alternate; }
+
+    @keyframes bar-dance {
+      0% { height: 15%; }
+      100% { height: 100%; }
+    }
+
+    /* Audio control label */
+    .audio-label {
+      display: block;
+      margin-top: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: #8b5a2b;
+      text-shadow: 1px 1px 2px rgba(139, 90, 43, 0.3);
+      opacity: 0.8;
+    }
+
+    /* Status indicator for debugging */
+    .audio-status {
+      font-size: 0.8rem;
+      color: #8b5a2b;
+      margin-top: 5px;
+      opacity: 0.7;
+    }
+
+    /* Navigation buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      position: relative;
+      z-index: 10;
+      gap: 20px;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #8b5a2b, #d4af37);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
+      transition: all 0.3s ease;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(139, 90, 43, 0.4);
+    }
+
+    .nav-button:active {
+      transform: translateY(1px);
+    }
+
+    /* Cast list and stage directions */
+    .cast-list {
+      background: rgba(255, 252, 245, 0.8);
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 8px rgba(139, 90, 43, 0.2);
+    }
+
+    .cast-list h2 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      text-align: center;
+      margin-top: 0;
+      color: #8b5a2b;
+      border-bottom: 2px solid rgba(139, 90, 43, 0.2);
+      padding-bottom: 10px;
+    }
+
+    .cast-item {
+      margin-bottom: 15px;
+    }
+
+    .character-name {
+      font-weight: 700;
+      color: #8b5a2b;
+    }
+
+    .stage-directions {
+      font-style: italic;
+      background: rgba(139, 90, 43, 0.05);
+      border-left: 3px solid #8b5a2b;
+      padding: 10px 15px;
+      margin: 1.5rem 0;
+      color: #5a4022;
+    }
+
+    .dialogue {
+      margin-bottom: 2rem;
+    }
+
+    .dialogue .speaker {
+      font-weight: 700;
+      color: #8b5a2b;
+      margin-bottom: 5px;
+      font-size: clamp(1.1rem, 3vw, 1.2rem);
+    }
+
+    .dialogue .text {
+      margin-left: 20px;
+      line-height: 1.7;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.2rem;
+        margin: 15px auto;
+        width: 85%;
+      }
+      
+      h1 {
+        padding: 0.8rem 0;
+        margin-bottom: 1.8rem;
+      }
+      
+      p {
+        text-align: left;
+      }
+      
+      .divider {
+        margin: 1.5rem auto;
+      }
+      
+      .audio-button {
+        padding: 12px 25px;
+      }
+
+      .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-button {
+        width: 80%;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1rem;
+        border-width: 4px;
+      }
+      
+      .signature {
+        margin-top: 2rem;
+      }
+      
+      .audio-button::before, .audio-button::after {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="frame"></div>
+    
+    <!-- Navigation buttons -->
+    <div class="nav-buttons">
+      <a href="index.html" class="nav-button">← Home</a>
+      <a href="scene1act2.html" class="nav-button">Next: Act 2 →</a>
+    </div>
+    
+    <!-- Audio player -->
+    <div class="audio-container" id="audioContainer">
+      <button class="audio-button" id="audioButton">
+        <span>Play Act 1 Music</span>
+        <div class="audio-glow"></div>
+      </button>
+      <div class="audio-viz">
+        <div class="audio-bar"></div>
+        <div class="audio-bar"></div>
+        <div class="audio-bar"></div>
+        <div class="audio-bar"></div>
+        <div class="audio-bar"></div>
+      </div>
+      <span class="audio-label" id="audioLabel">Experience the musical introduction</span>
+      <div class="audio-status" id="audioStatus"></div>
+    </div>
+    
+    <h1>Scene 1, Act 1: The Awakening</h1>
+    
+    <!-- Cast list for this scene -->
+    <div class="cast-list">
+      <h2>Cast of Characters</h2>
+      <div class="cast-item"><span class="character-name">Soprano - Elisabetta:</span> The protagonist, seeking truth</div>
+      <div class="cast-item"><span class="character-name">Tenor - Marco:</span> The mysterious guide</div>
+      <div class="cast-item"><span class="character-name">Chorus:</span> Voices of nature and memory</div>
+    </div>
+
+    <!-- Stage directions -->
+    <div class="stage-directions">
+      <p>The stage is dimly lit. A single spotlight illuminates the center where ELISABETTA stands, dressed in flowing white robes. The CHORUS is positioned in shadows around the edges of the stage. Gentle orchestral music builds, suggesting the coming dawn.</p>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">ELISABETTA:</div>
+      <div class="text">
+        <p>Within this darkness, I await the light,<br>
+        My soul adrift on waves of memory.<br>
+        What visions dance beyond my mortal sight?<br>
+        What whispers call from realms I cannot see?</p>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">CHORUS:</div>
+      <div class="text">
+        <p><em>(softly)</em><br>
+        Awaken, seeker, from your slumber deep,<br>
+        The veil grows thin between the worlds tonight.<br>
+        What secrets do you wish the stars to keep?<br>
+        What shadows do you banish with your light?</p>
+      </div>
+    </div>
+
+    <div class="stage-directions">
+      <p>A second spotlight gradually illuminates MARCO, who enters from stage right. He moves with deliberate steps, carrying a lantern that casts flickering patterns across the stage.</p>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">MARCO:</div>
+      <div class="text">
+        <p>I come bearing flames of ancient knowing,<br>
+        To guide your steps through darkness unexplored.<br>
+        Like rivers to the sea, forever flowing,<br>
+        Our paths converge by destinies assured.</p>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">ELISABETTA:</div>
+      <div class="text">
+        <p><strong>Who sends you to my side at this strange hour?<br>
+        What purpose draws you to my questioning?</strong></p>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">MARCO:</div>
+      <div class="text">
+        <p>Not who, but what—the ever-turning wheel,<br>
+        The dance of stars, the rhythm of the spheres.<br>
+        <em>Tempus fugit, memento vivere</em>—<br>
+        Time flies, remember to live, while moments disappear.</p>
+      </div>
+    </div>
+
+    <div class="stage-directions">
+      <p>The lights slowly brighten, suggesting dawn. The CHORUS moves forward, forming a semicircle around ELISABETTA and MARCO. The music swells with strings and woodwinds.</p>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">CHORUS:</div>
+      <div class="text">
+        <p>The awakening begins, the journey starts,<br>
+        As morning light dispels the shadowed night.<br>
+        Two souls entwined by fate's mysterious arts,<br>
+        Must seek the truth beyond what meets the sight.</p>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">ELISABETTA:</div>
+      <div class="text">
+        <p>Then I shall follow where your lantern leads,<br>
+        Through darkened paths and gardens unexplored.<br>
+        Though caution whispers, courage intercedes—<br>
+        What treasures wait beyond this threshold door?</p>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">MARCO:</div>
+      <div class="text">
+        <p>Not treasures as the world has come to know,<br>
+        But wisdom ancient as the mountain stone.<br>
+        The seeds of truth we carefully must sow,<br>
+        To reap the harvest from what has been grown.</p>
+      </div>
+    </div>
+
+    <div class="stage-directions">
+      <p>MARCO extends his hand to ELISABETTA. After a moment's hesitation, she takes it. The lights shift to a warm golden hue as they move together toward stage left. The CHORUS follows behind them as the music builds to a crescendo.</p>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">ELISABETTA and MARCO:</div>
+      <div class="text">
+        <p><em>(in unison)</em><br>
+        Through shadow and light, through wisdom and wonder,<br>
+        We journey together, no pathway asunder.<br>
+        The quest has begun, the story unfolds,<br>
+        As destiny's tapestry gently unrolls.</p>
+      </div>
+    </div>
+
+    <div class="stage-directions">
+      <p>The lights slowly fade except for the lantern MARCO carries. As they exit stage left, the CHORUS remains, their voices diminishing to whispers.</p>
+    </div>
+
+    <div class="dialogue">
+      <div class="speaker">CHORUS:</div>
+      <div class="text">
+        <p><em>(voices fading)</em><br>
+        The first step is taken, the journey's begun,<br>
+        What ends in the evening must start with the sun.<br>
+        Follow the lantern, seek what is true,<br>
+        The answers you seek are already in you.</p>
+      </div>
+    </div>
+
+    <div class="stage-directions">
+      <p>The stage darkens completely. A single note lingers in the air as the curtain falls on Act 1.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Navigation buttons at bottom -->
+    <div class="nav-buttons">
+      <a href="index.html" class="nav-button">← Home</a>
+      <a href="scene1act2.html" class="nav-button">Next: Act 2 →</a>
+    </div>
+  </div>
+
+  <!-- Audio element -->
+  <audio id="sermonAudio" preload="auto">
+    <source src="scene1act1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Audio player functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioButton = document.getElementById('audioButton');
+      const audioContainer = document.getElementById('audioContainer');
+      const audioElement = document.getElementById('sermonAudio');
+      const audioLabel = document.getElementById('audioLabel');
+      const audioStatus = document.getElementById('audioStatus');
+      
+      let isPlaying = false;
+      
+      // Debug function to show audio status
+      function updateStatus(message) {
+        if (audioStatus) {
+          audioStatus.textContent = message;
+        }
+      }
+      
+      // Check if audio loaded
+      if (audioElement) {
+        audioElement.addEventListener('loadeddata', function() {
+          updateStatus("Audio loaded successfully");
+        });
+        
+        audioElement.addEventListener('error', function(e) {
+          updateStatus("Error loading audio: " + (audioElement.error ? audioElement.error.code : "unknown"));
+        });
+      } else {
+        updateStatus("Audio element not found!");
+      }
+      
+      audioButton.addEventListener('click', function() {
+        if (!isPlaying) {
+          // Try to play and handle any errors
+          const playPromise = audioElement.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.then(_ => {
+              // Playback started successfully
+              isPlaying = true;
+              audioContainer.classList.add('playing');
+              audioLabel.textContent = "Experiencing the musical journey...";
+              audioButton.innerHTML = "<span>Pause Music</span><div class='audio-glow'></div>";
+              updateStatus("Playing");
+            })
+            .catch(error => {
+              // Auto-play was prevented or other error
+              updateStatus("Play failed: " + error.message);
+            });
+          }
+        } else {
+          audioElement.pause();
+          isPlaying = false;
+          audioContainer.classList.remove('playing');
+          audioLabel.textContent = "Experience the musical introduction";
+          audioButton.innerHTML = "<span>Play Act 1 Music</span><div class='audio-glow'></div>";
+          updateStatus("Paused");
+        }
+      });
+      
+      audioElement.addEventListener('ended', function() {
+        isPlaying = false;
+        audioContainer.classList.remove('playing');
+        audioLabel.textContent = "The music has concluded. Listen again?";
+        audioButton.innerHTML = "<span>Replay Act 1 Music</span><div class='audio-glow'></div>";
+        updateStatus("Ended");
+      });
+    });
+  </script>
+</body>
+</html>
